@@ -75,4 +75,8 @@
 	[self becomeFirstResponder];
 }
 
+- (UIKeyboardType)keyboardType {
+    return UIKeyboardTypeNumberPad;
+}
+
 @end
