@@ -10,6 +10,10 @@
 
 @implementation SimpleTextView
 
+@synthesize textColor;
+@synthesize font;
+@synthesize textStore;
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

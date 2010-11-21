@@ -12,6 +12,13 @@
 
 @implementation CoreTextView
 
+@synthesize textColor;
+@synthesize font;
+@synthesize textStore;
+@synthesize currentMarkedText;
+
+@synthesize inputDelegate;
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

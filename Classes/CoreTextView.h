@@ -15,6 +15,9 @@
     NSString *currentMarkedText;
     NSRange currentMarkedRange;
     NSRange currentMarkedSelectedRange;
+    
+    UITextRange *selectedTextRange;
+    UITextInputStringTokenizer *tokenizer;
 }
 
 @property (nonatomic, retain) UIColor *textColor;
