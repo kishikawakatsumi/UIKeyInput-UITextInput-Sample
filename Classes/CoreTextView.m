@@ -63,10 +63,7 @@
 #pragma mark UIKeyInput protocol
 
 - (BOOL)hasText {
-    if (self.textStore.length > 0) {
-        return YES;
-    }
-    return NO;
+    return textStore.length > 0;
 }
 
 - (void)insertText:(NSString *)text {
