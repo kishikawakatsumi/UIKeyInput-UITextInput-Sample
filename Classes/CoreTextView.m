@@ -139,90 +139,10 @@
     
     [self.inputDelegate selectionDidChange:self];
     
-//	RTKTextRange *range = (RTKTextRange *)self.selectedTextRange;
-//    
-//	if ([range isEmpty]) {
-//		// Remove selection handle if they're there.
-//		[selectionHandleStart removeFromSuperview];
-//		[selectionHandleEnd removeFromSuperview];
-//		[_selectionRange removeFromSuperview];
-//		[_selectionFirstLine removeFromSuperview];
-//		[_selectionLastLine removeFromSuperview];
-//		
-//		// Reposition the caret.
-//		[caret setFrame:[self caretRectForPosition:(RTKTextPosition *)[range end]]];
-//		[self addSubview:caret];
-//		[caret setNeedsDisplay];
-//	} else {
-//		// Remove caret handle if it's there.
-//		[caret removeFromSuperview];
-//        
-//		CGRect caratStart = [self caretRectForPosition:(RTKTextPosition *)[range start]];
-//		CGRect caratEnd = [self caretRectForPosition:(RTKTextPosition *)[range end]];
-//		
-//		if (caratStart.origin.y == caratEnd.origin.y) {
-//			// The selection is on one line.
-//			[_selectionFirstLine setFrame:CGRectMake(
-//                                                     caratStart.origin.x + caratStart.size.width,
-//                                                     caratStart.origin.y,
-//                                                     caratEnd.origin.x -caratStart.size.width - caratStart.origin.x,
-//                                                     caratStart.size.height
-//                                                     )];
-//			[_selectionFirstLine setNeedsDisplay];
-//			[_selectionRange removeFromSuperview];
-//			[_selectionLastLine removeFromSuperview];
-//			
-//			[self addSubview:_selectionFirstLine];
-//		} else {
-//			// multiline
-//			[_selectionRange setFrame:CGRectMake(
-//												 0,
-//												 caratStart.origin.y + caratStart.size.height,
-//												 self.bounds.size.width,
-//												 caratEnd.origin.y - (caratStart.origin.y + caratStart.size.height)
-//												 )];
-//            
-//			[_selectionFirstLine setFrame:CGRectMake(
-//                                                     caratStart.origin.x + caratStart.size.width,
-//                                                     caratStart.origin.y,
-//                                                     self.bounds.size.width - caratStart.origin.x - caratStart.size.width,
-//                                                     caratStart.size.height
-//                                                     )];
-//            
-//			[_selectionLastLine setFrame:CGRectMake(
-//													0,
-//													caratEnd.origin.y,
-//													caratEnd.origin.x,
-//													caratEnd.size.height
-//													)];
-//			
-//			[_selectionRange setNeedsDisplay];
-//			[_selectionFirstLine setNeedsDisplay];
-//			[_selectionLastLine setNeedsDisplay];
-//			
-//			[self addSubview:_selectionRange];
-//			[self addSubview:_selectionLastLine];
-//			[self addSubview:_selectionFirstLine];
-//            
-//			
-//		}
-//		
-//		// Reposition the start handle.
-//		[selectionHandleStart setCaretRect:caratStart];
-//		[self addSubview:selectionHandleStart];
-//		[selectionHandleStart setNeedsDisplay];
-//		
-//		// Reposition the end handle.
-//		[selectionHandleEnd setCaretRect:caratEnd];
-//		[self addSubview:selectionHandleEnd];
-//		[selectionHandleEnd setNeedsDisplay];
-//	}
-    
     [self setNeedsDisplay];
 }
 
 - (UITextRange *)selectedTextRange {
-    NSLog(@"%@", @"++++++++++++++++++++++++");
     NSLog(@"%s", __func__);
     return [TextRange rangeWithStart:[TextPosition positionWithInteger:0] end:[TextPosition positionWithInteger:[currentMarkedText length]]];
 }
